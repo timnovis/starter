@@ -149,7 +149,7 @@ gulp.task( "watch", function () {
 			log( "Finished", chalk.magenta( "styles" ) );
 
 			if(browserSync) {
-				browserSync.reload();
+				browserSync.reload( "style.css" );
 			}
 		});
 	});
