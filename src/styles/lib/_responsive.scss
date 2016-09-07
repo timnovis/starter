@@ -1,0 +1,58 @@
+$breakpoints_map: (
+  '1e': (
+    min_width: null,
+    max_width: 29.938em
+  ),
+  '1t2e': (
+    min_width: null,
+    max_width: 47.938em
+  ),
+  '2e': (
+    min_width: 29.948em,
+    max_width: 47.938em
+  ),
+  '2': (
+    min_width: 29.948em,
+    max_width: null
+  ),
+  '1t3e': (
+    min_width: null,
+    max_width: 61.938em
+  ),
+  '3e': (
+    min_width: 47.948em,
+    max_width: 61.938em
+  ),
+  '3': (
+    min_width: 47.948em,
+    max_width: null
+  ),
+  '4': (
+    min_width: 61.948em,
+    max_width: null
+  ),
+);
+
+@mixin bp($size) {
+	$size: $size + '';
+	@if map_has_key($breakpoints_map, $size) {
+		$breakpoint_map: map-get($breakpoints_map, $size);
+		@if (map-get($breakpoint_map, 'min_width') == null) {
+			@media (max-width: #{map-get($breakpoint_map, 'max_width')}) { @content; }
+		} @else if (map-get($breakpoint_map, 'max_width') == null) {
+			@media (min-width: #{map-get($breakpoint_map, 'min_width')}) { @content; }
+		} @else {
+			@media (min-width: #{map-get($breakpoint_map, 'min_width')}) and (max-width: #{map-get($breakpoint_map, 'max_width')}) { @content; }
+		}
+	}
+}
+
+@mixin cbp($min_width: null, $max_width: null) {
+	@if ($min_width == null) {
+		@media (max-width: #{$max_width}) { @content }
+	} @else if ($max_width == null) {
+		@media (min-width: #{$min_width}) { @content }
+	} @else {
+		@media (min-width: #{$min_width}) and (max-width: #{$max_width}) { @content }
+	}
+}

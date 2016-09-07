@@ -1,0 +1,27 @@
+{
+	"private": true,
+	"devDependencies": {
+		"autoprefixer": "*",
+		"browser-sync": "*",
+		"css-mqpacker": "*",
+		"del": "*",
+		"fancy-log": "*",
+		"gulp": "*",
+		"gulp-concat": "*",
+		"gulp-jshint": "*",
+		"gulp-plumber": "*",
+		"gulp-postcss": "*",
+		"gulp-sass": "*",
+		"gulp-sass-glob": "southan/gulp-sass-glob",
+		"gulp-uglify": "*",
+		"jshint": "*",
+		"jshint-stylish": "*",
+		"merge-stream": "*",
+		"minimist": "*",
+		"node-notifier": "*",
+		"pixrem": "*",
+		"postcss-color-rgba-fallback": "*",
+		"postcss-reporter": "*",
+		"chalk": "*"
+	}
+}

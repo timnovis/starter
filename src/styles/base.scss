@@ -1,0 +1,16 @@
+@import 'lib/normalize';
+
+*, *:before, *:after, *::before, *::after {
+	box-sizing: border-box;
+	font-smoothing: antialiased;
+}
+
+img, video, audio, embed, object, canvas, input, iframe {
+	vertical-align: middle;
+	max-width: 100%;
+}
+
+svg {
+	max-height: 100%;
+	display: block;
+}
